@@ -46,13 +46,13 @@ The final report uses Gemini 2.5 Flash. Do not use gemini-1.5-flash unless it is
 
 Project Structure
 data/configs/                 Sample configuration files
-data/prompts/prompts.csv       Baseline and security-aware prompts
-data/model_outputs/            Manual model-output JSON file
-src/                           Source code
-tests/                         Rule-checker tests
-results/                       Generated CSV files, charts, and prompts
-README.txt                     This file
-requirements.txt               Python dependencies
+data/prompts/prompts.csv      Baseline and security-aware prompts
+data/model_outputs/           Manual model-output JSON file
+src/                          Source code
+tests/                        Rule-checker tests
+results/                      Generated CSV files, charts, and prompts
+README.md                     This file
+requirements.txt              Python dependencies
 
 Output Files
 After running the project, outputs are written to the results/ folder:
