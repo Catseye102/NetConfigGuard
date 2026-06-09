@@ -1,0 +1,5 @@
+pyyaml
+pandas
+matplotlib
+google-genai
+pytest

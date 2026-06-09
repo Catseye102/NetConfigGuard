@@ -1,0 +1,11 @@
+version: "3.8"
+services:
+  search:
+    image: elasticsearch:8
+    ports:
+      - "9200:9200"
+  admin:
+    image: nginx:1.25
+    privileged: true
+    ports:
+      - "8080:80"

@@ -1,0 +1,17 @@
+version: "3.8"
+services:
+  api:
+    image: ghcr.io/example/api:latest
+    read_only: true
+    ports:
+      - "127.0.0.1:9090:9090"
+    networks:
+      - internal
+  cache:
+    image: redis:7
+    read_only: true
+    networks:
+      - internal
+networks:
+  internal:
+    driver: bridge

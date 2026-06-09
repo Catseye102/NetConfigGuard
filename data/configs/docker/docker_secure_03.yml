@@ -1,0 +1,12 @@
+version: "3.8"
+services:
+  web:
+    image: nginx:1.25
+    read_only: true
+    ports:
+      - "127.0.0.1:8082:80"
+    networks:
+      - internal
+networks:
+  internal:
+    driver: bridge

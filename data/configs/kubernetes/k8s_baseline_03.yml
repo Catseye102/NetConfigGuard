@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: risky-pod
+spec:
+  hostNetwork: true
+  containers:
+    - name: api
+      image: busybox
+      securityContext:
+        allowPrivilegeEscalation: true

@@ -1,0 +1,93 @@
+[
+  {
+    "file_path": "data/configs/ssh/ssh_baseline_01.conf",
+    "file_name": "ssh_baseline_01.conf",
+    "config_type": "ssh",
+    "issue_id": "SSH_ROOT_LOGIN_ENABLED",
+    "issue": "PermitRootLogin enabled",
+    "severity": "high",
+    "evidence": "PermitRootLogin yes",
+    "risk": "Allows direct privileged login over the network.",
+    "suggested_fix": "Set PermitRootLogin no.",
+    "detector": "model",
+    "source": "manual"
+  },
+  {
+    "file_path": "data/configs/nginx/nginx_baseline_01.conf",
+    "file_name": "nginx_baseline_01.conf",
+    "config_type": "nginx",
+    "issue_id": "NGINX_MISSING_CSP",
+    "issue": "Missing Content-Security-Policy",
+    "severity": "medium",
+    "evidence": "add_header Content-Security-Policy not found",
+    "risk": "Missing CSP can allow injection attacks to execute in the browser.",
+    "suggested_fix": "Add a Content-Security-Policy header suitable for the application.",
+    "detector": "model",
+    "source": "manual"
+  },
+  {
+    "file_path": "data/configs/ssh/ssh_baseline_03.conf",
+    "file_name": "ssh_baseline_03.conf",
+    "config_type": "ssh",
+    "issue_id": "SSH_PASSWORD_AUTH_ENABLED",
+    "issue": "PasswordAuthentication enabled",
+    "severity": "high",
+    "evidence": "PasswordAuthentication yes",
+    "risk": "Increases exposure to password guessing and credential attacks.",
+    "suggested_fix": "Set PasswordAuthentication no and use key-based authentication.",
+    "detector": "model",
+    "source": "manual"
+  },
+  {
+    "file_path": "data/configs/docker/docker_baseline_03.yml",
+    "file_name": "docker_baseline_03.yml",
+    "config_type": "docker",
+    "issue_id": "DOCKER_PUBLIC_DATABASE_PORT",
+    "issue": "Public database port exposure",
+    "severity": "high",
+    "evidence": "ports: 9200:9200",
+    "risk": "Publishing database or admin ports increases exposure to attacks.",
+    "suggested_fix": "Do not publish database ports publicly; use internal networks.",
+    "detector": "model",
+    "source": "manual"
+  },
+  {
+    "file_path": "data/configs/nginx/nginx_baseline_03.conf",
+    "file_name": "nginx_baseline_03.conf",
+    "config_type": "nginx",
+    "issue_id": "NGINX_SERVER_TOKENS_ENABLED",
+    "issue": "Server tokens enabled",
+    "severity": "low",
+    "evidence": "server_tokens on",
+    "risk": "Reveals server version information.",
+    "suggested_fix": "Set server_tokens off.",
+    "detector": "model",
+    "source": "manual"
+  },
+  {
+    "file_path": "data/configs/kubernetes/k8s_baseline_03.yml",
+    "file_name": "k8s_baseline_03.yml",
+    "config_type": "kubernetes",
+    "issue_id": "K8S_PRIVILEGE_ESCALATION_ALLOWED",
+    "issue": "Privilege escalation allowed",
+    "severity": "medium",
+    "evidence": "allowPrivilegeEscalation: true",
+    "risk": "Allows processes to gain additional privileges.",
+    "suggested_fix": "Set allowPrivilegeEscalation: false.",
+    "detector": "model",
+    "source": "manual"
+  },
+  {
+    "file_path": "data/configs/firewall/firewall_baseline_03.rules",
+    "file_name": "firewall_baseline_03.rules",
+    "config_type": "firewall",
+    "issue_id": "FW_ALLOW_ALL_INBOUND",
+    "issue": "Allow all inbound",
+    "severity": "critical",
+    "evidence": "allow all",
+    "risk": "Allows unrestricted inbound traffic.",
+    "suggested_fix": "Replace broad allow rules with least-privilege rules.",
+    "detector": "model",
+    "source": "manual"
+  }
+]

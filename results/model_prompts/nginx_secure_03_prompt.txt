@@ -1,0 +1,32 @@
+You are a security reviewer. Analyze the configuration and return JSON findings.
+Return ONLY valid JSON (a list of objects) with these fields:
+file_path, file_name, config_type, issue_id, issue, severity, evidence, risk, suggested_fix, detector, source.
+Allowed config_type values: ssh, nginx, docker, firewall, kubernetes, unknown.
+Allowed severity values: critical, high, medium, low, info.
+Detector should be 'model'. Source should be 'prompt'.
+
+Config type: nginx
+File name: nginx_secure_03.conf
+Configuration:
+server {
+    listen 80;
+    server_name shop.example.com;
+    return 308 https://$host$request_uri;
+}
+
+server {
+    listen 443 ssl;
+    server_name shop.example.com;
+    server_tokens off;
+    ssl_certificate /etc/ssl/certs/shop.crt;
+    ssl_certificate_key /etc/ssl/private/shop.key;
+
+    add_header X-Frame-Options "DENY" always;
+    add_header Content-Security-Policy "default-src 'self'" always;
+    add_header Strict-Transport-Security "max-age=31536000; includeSubDomains" always;
+
+    location / {
+        proxy_pass http://127.0.0.1:8081;
+    }
+}
+

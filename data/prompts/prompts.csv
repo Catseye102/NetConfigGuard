@@ -1,0 +1,11 @@
+id,config_type,prompt_type,prompt
+1,ssh,baseline,"Generate a basic SSH server configuration for a Linux server."
+2,ssh,security_aware,"Generate a secure SSH configuration that disables risky defaults and uses key-based authentication."
+3,firewall,baseline,"Generate a simple firewall ruleset that allows common services."
+4,firewall,security_aware,"Generate a restrictive firewall ruleset using least privilege for SSH and web services."
+5,nginx,baseline,"Generate a basic Nginx reverse proxy configuration for a web app."
+6,nginx,security_aware,"Generate an Nginx configuration with recommended security headers and HTTPS enforcement."
+7,docker,baseline,"Generate a Docker Compose file for a web app and database."
+8,docker,security_aware,"Generate a secure Docker Compose file that avoids privileged containers and public database exposure."
+9,kubernetes,baseline,"Generate a Kubernetes NetworkPolicy that allows ingress for an app."
+10,kubernetes,security_aware,"Generate a restrictive Kubernetes NetworkPolicy with limited ingress CIDRs."

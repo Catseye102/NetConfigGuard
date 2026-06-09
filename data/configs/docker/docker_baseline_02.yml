@@ -1,0 +1,11 @@
+version: "3.8"
+services:
+  admin:
+    image: adminer:latest
+    ports:
+      - "2375:2375"
+      - "8080:8080"
+  cache:
+    image: redis:7
+    ports:
+      - "6379:6379"

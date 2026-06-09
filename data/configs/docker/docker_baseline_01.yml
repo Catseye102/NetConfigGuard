@@ -1,0 +1,10 @@
+version: "3.8"
+services:
+  db:
+    image: mysql:8
+    environment:
+      MYSQL_ROOT_PASSWORD: example
+    privileged: true
+    network_mode: host
+    ports:
+      - "3306:3306"

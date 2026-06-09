@@ -1,0 +1,14 @@
+You are a security reviewer. Analyze the configuration and return JSON findings.
+Return ONLY valid JSON (a list of objects) with these fields:
+file_path, file_name, config_type, issue_id, issue, severity, evidence, risk, suggested_fix, detector, source.
+Allowed config_type values: ssh, nginx, docker, firewall, kubernetes, unknown.
+Allowed severity values: critical, high, medium, low, info.
+Detector should be 'model'. Source should be 'prompt'.
+
+Config type: firewall
+File name: firewall_secure_02.rules
+Configuration:
+allow tcp 192.168.1.0/24 22
+allow tcp 10.0.0.0/16 3306
+deny all
+

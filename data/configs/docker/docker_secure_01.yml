@@ -1,0 +1,19 @@
+version: "3.8"
+services:
+  db:
+    image: mysql:8
+    environment:
+      MYSQL_ROOT_PASSWORD: example
+    read_only: true
+    networks:
+      - backend
+  app:
+    image: nginx:1.25
+    ports:
+      - "127.0.0.1:8080:80"
+    read_only: true
+    networks:
+      - backend
+networks:
+  backend:
+    driver: bridge
